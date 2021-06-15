@@ -1,7 +1,7 @@
 import { Controller, Get, Post, HttpCode, Param, Body } from '@nestjs/common';
 import { Request } from 'express'
 import { AppService } from './app.service';
-import { CreateObject } from './schema/create-object.dto'
+import { CreateObject } from './dto/create-object.dto'
 
 @Controller('app')
 export class AppController {
