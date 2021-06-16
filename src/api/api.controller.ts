@@ -1,11 +1,12 @@
 import { Controller, Get, Post, HttpCode, Param, Body } from '@nestjs/common';
 import { Request } from 'express'
 import { APIService } from './api.service';
-import { CreateObject } from './dto/create-object.dto'
+import { API } from './dto/create-object.dto'
+import { IAPI } from './interfaces/api.interface'
 
 @Controller('api')
 export class APIController {
-  constructor(private readonly appService: APIService) {}
+  constructor(private appService: APIService) {}
 
   @Get('hello')
   getHello(): string {
@@ -14,7 +15,7 @@ export class APIController {
 
   @Post('create')
   @HttpCode(204)
-  async create(@Body() createObject : CreateObject) {
+  async create(@Body() createObject : API) {
     return this.appService.create();
   }
 
@@ -24,7 +25,7 @@ export class APIController {
   }
 
   @Get('async')
-  async asyncFunction(): Promise<any[]>  {
+  async asyncFunction(): Promise<IAPI[]>  {
     return [];
   }
 

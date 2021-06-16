@@ -1,4 +1,4 @@
-export class API {
+export interface IAPI{
     height: number;
     width : number;
     length : number;
