@@ -1,4 +1,4 @@
-import { Controller, Get, Post, HttpCode, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, HttpCode, Param, Body, ParseIntPipe, ParseArrayPipe } from '@nestjs/common';
 import { Request } from 'express'
 import { APIService } from './api.service';
 import { API } from './dto/create-object.dto'
@@ -19,9 +19,9 @@ export class APIController {
     return this.appService.create();
   }
 
-  @Get('param/:id')
-  printParam(@Param() params):string {
-    return this.appService.printParam(params)
+  @Get('param/:id/:arr')
+  printParam(@Param('id',ParseIntPipe) id, @Param('arr', ParseArrayPipe) arr):string {
+    return this.appService.printParam(id, arr)
   }
 
   @Get('async')

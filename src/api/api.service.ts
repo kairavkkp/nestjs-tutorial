@@ -11,8 +11,8 @@ export class APIService {
    return "Created" 
   }
 
-  printParam(params):string {
-    return `Param Id passed was : ${params.id}.`
+  printParam(id, arr):string {
+    return `Param Id passed was : ${id} and array is ${arr}.`
   }
 
 }
