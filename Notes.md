@@ -5,5 +5,5 @@ npm i -g @nestjs/cli
 
 ## GraphQL needed packages
 ```cmd
-$ npm i @nestjs/graphql graphql-tools graphql apollo-server-express
+$ npm i --save @nestjs/graphql apollo-server-express graphql-tools graphql @nestjs/mongoose mongoose type-graphql
 ```
