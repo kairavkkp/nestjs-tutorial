@@ -6,6 +6,6 @@ import { APIModule } from './api/api.module';
   imports: [
     APIModule,
     GraphQLModule.forRoot({autoSchemaFile: 'schema.gql'})
-  ],
+  ]
 })
 export class AppModule {}
